@@ -25,8 +25,10 @@ export async function POST(
                 userId
             }
         });
+
+        return NextResponse.json(store);
     } catch (error) {
-        console.log('[STORES_POST]', error)
+        console.log('[STORES_POST]', error);
         return new NextResponse("Interal error", { status: 500 });
     }
 }
